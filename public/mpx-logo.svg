@@ -1,0 +1,5 @@
+<svg width="240" height="80" viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="80" fill="none"></rect>
+  <text x="10" y="55" font-family="monospace" font-size="48" fill="#00E6C3">MPX</text>
+  <text x="125" y="55" font-family="monospace" font-size="32" fill="#3A7AFE">Labs</text>
+</svg>
