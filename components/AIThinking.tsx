@@ -2,31 +2,31 @@
 
 import { useEffect, useState } from "react";
 
-const messages = [
-  "Analyzing industrial data pipelines...",
-  "Building workflow optimization model...",
-  "Generating predictive analytics...",
-  "Deploying AI-enhanced software architecture...",
-  "Ensuring high availability & reliability...",
-  "Creating efficient intelligent solutions...",
+const MESSAGES = [
+  "Analyse industrieller Prozesse läuft...",
+  "Optimiere Datenströme...",
+  "Prognostiziere Ausfallwahrscheinlichkeiten...",
+  "Bewerte Sensorintegrität...",
+  "Aktualisiere neuronale Modelle...",
 ];
 
 export default function AIThinking() {
-  const [index, setIndex] = useState(0);
-  const [displayed, setDisplayed] = useState("");
+  const [text, setText] = useState(MESSAGES[0]);
 
   useEffect(() => {
-    let interval = setInterval(() => {
-      setDisplayed(messages[index]);
-      setIndex((i) => (i + 1) % messages.length);
-    }, 2000);
+    const id = setInterval(() => {
+      const next = MESSAGES[Math.floor(Math.random() * MESSAGES.length)];
+      setText(next);
+    }, 2600);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(id);
+  }, []); // keine missing-deps-Warnung, MESSAGES ist konstant oben
 
   return (
     <div className="font-mono text-mpx-aqua text-xl mt-10 opacity-80">
-      <span className="text-mpx-blue">AI ></span> {displayed}
+      <span className="text-mpx-blue">{"AI > "}</span>
+      {text}
     </div>
   );
 }
+

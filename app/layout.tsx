@@ -1,21 +1,21 @@
+import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import MPXConsole from "../components/MPXConsole";
 
-export const metadata = {
-  title: "MPX Labs",
-  description: "AI-driven systems",
+export const metadata: Metadata = {
+  title: "MPX Labs – Adaptive KI-Systeme für die Industrie",
+  description:
+    "MPX Labs entwickelt KI-gestützte industrielle Software, Automatisierungslösungen und datengetriebene Systeme.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
+    <html lang="de">
       <body className="bg-mpx-black text-mpx-white">
-        <Navbar />
-        <main className="pt-20 min-h-screen">{children}</main>
-        <Footer />
-        <MPXConsole />
+        {children}
       </body>
     </html>
   );
